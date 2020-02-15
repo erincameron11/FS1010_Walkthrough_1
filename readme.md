@@ -1,8 +1,17 @@
-FS1010 Code Construct 1
+York University FS1010 - UI Concepts and Frameworks: Code Construct 1
 
-Objective: build an app that displays a new activity in a list, every time a button is pressed. The activities will come from an API ('https://www.boredapi.com/api/activity) and will be displayed on an HTML page.
+Walkthrough for an exercise of a course at York University (only accessible to students [here](https://gitlab.com/york-u-fs1010-fall-2019/code-construct-one))
 
 ---
+
+Feedback and comments are appreciated: [Mauro Meden](mailto:mauro.meden@gmail.com?subject=[GitHub]%20FS1010)
+
+---
+
+OBJECTIVE: build an app that displays a new activity in a list, every time a button is pressed. The activities will come from an API ('https://www.boredapi.com/api/activity) and will be displayed on an HTML page.
+
+---
+
 STEP 1: Identify what the app will do
 
 1. Create an eventListener to check that the document has been loaded. Include everything else in a function triggered by this eventListener.
@@ -17,17 +26,23 @@ STEP 1: Identify what the app will do
 5. add eventListener for click on button that will execute function at point 4.
 
 ---
+
 STEP 2: Verify necessary competencies
 
 1. DOM
 2. DOM
 3. Classes (initialization), DOM; classList, fetch, promises (.then)
 4. Classes (create object), promises (.then)
+5. DOM
 
 ---
-STEP 3: Competencies breakdown, explanations and exercises
 
-1. document.addEventListener('DOMContentLoaded', function () { /* Entire code here */ }
+STEP 3: Competencies breakdown, explanations and exercises (exercises to be added soon)
+
+1. 	```javascript
+	document.addEventListener('DOMContentLoaded', function () { /* Entire code here */ }
+	```
+
 	>> Already provided, tells the browser to only execute the code after the entire document has been completely loaded.
 	
 	>> Ref: https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
@@ -40,20 +55,26 @@ STEP 3: Competencies breakdown, explanations and exercises
 	
 3. 
 	a.
+
+	```javascript
 	class ExcitingActivity {
 		constructor() {
 		this.description = null;
 		this.price = null;
 		this.element = document.createElement('li');
+	```
+
 	>> A class called ExcitingActivity is being created. A new object will be created through this classe later (see 4.a)
 	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp
 	
 	TODO: Add DOM class `activity` to `this.element`
 	>> Use the "Element.classList" property to add the DOM class activity (.activity) to "this.element"
+
 	>> Ref: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 	
 	b.
+
 	TODO:
 		1. Return a call to `fetch()` with the following URL: https://www.boredapi.com/api/activity
 		2. Parse the response as JSON
@@ -61,6 +82,8 @@ STEP 3: Competencies breakdown, explanations and exercises
 		4. The response is an object with the property `price`, assign this to `this.price`
 	>> Create a method (a function inside the class ExcitingActivity) that fetches an element from an API, using the fetch API
 	>> Usage:
+
+	```javascript
 	myFetchFunction() {
 		return fetch('https://example.com/api')
 			.then((response) => {
@@ -71,15 +94,20 @@ STEP 3: Competencies breakdown, explanations and exercises
 			return data;
 			});
 	}
+	```
 	
 	>> Ref: https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 	
 	c.
+
+	```javascript
 	addToList() {
       		let descriptionElement = document.createElement('p');
       		descriptionElement.classList.add('activity-description');
       		descriptionElement.textContent = this.description;
       		this.element.appendChild(descriptionElement);
+	```
+
 	>> This block creates a new paragraph (into the variable descriptionElement), assigns the DOM class .activity-description to it, then inserts in it the text coming from the this.description property of the activity object and finally appends the new paragraph to this.element as a child.
 	
 	TODO: Creates a `span` element and stores it in a variable named `priceElement`
@@ -102,18 +130,25 @@ STEP 3: Competencies breakdown, explanations and exercises
 	TODO: Appends `this.element` to `elements.activities` as a child
 	>> Same as this.element.appendChild(descriptionElement); (always pay attention to the order of the elements and which is appended to which)
 	
-4.
+4. 
 	>> The function addActivity() will be called every time the button is pressed. Each time the button is pressed, a new activity is displayed (one at a time).
 	>> The first step is to create a new instance of the ExcitingActivity object.
 	>> The second one, call the method to fetch the contents, then the method to add it to the list.
+	
 	a.
+
+	```javascript
 	let activity;
+	```
+
 	>> We defined a class in 3.a, now we need to create an object from that and assign it to the variable called activity.
 	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp
+
 	>> Note the difference in the constructor() statement between our ExcitingActivity and the Car in the example. It will reflect on the way we create the new element.
 	
 	b.
+	
 	TODO: Initialize a new instance of `ExcitingActivity` into a new variable called `activity`
 	return activity.then;
 	>> Keep this line unchanged and write above it.
@@ -125,20 +160,30 @@ STEP 3: Competencies breakdown, explanations and exercises
 	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp (methods section)
 	
-	>> The example found here https://javascript.info/promise-basics#then explains the use of .then() with the following example:
+	>> The example found here https://javascript.info/promise-basics#then explains the use of .then() the following way:
+
+	```javascript
 	promise.then(
 		function(result) { /* handle a successful result */ },
 		function(error) { /* handle an error */ }
 	);
+	```
+
 	>> We can ignore the error part for this example, so we remain with this:
+
+	```javascript
 	promise.then(
 		function(result) { /* handle a successful result */ },
 	);
+	```
+
 	>> As specified above, fetchContents() and addToList() are methods of the activity object we created in the previous step, so make sure to use the dot notation when you call them.
 	>> In this case, fetchContents() is my promise and addToList() is the function called inside then().
 	>>
+
+	```javascript
 	object.method() 	// This is the same as the promise in the example above
     .then ( () => { 	// This is just how then() is used, nothing particular to do
       object.method();	// This is  the method that will be called by then() in case the promise resolves correctly
     });
-	
+	```
