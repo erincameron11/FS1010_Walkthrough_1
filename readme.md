@@ -29,6 +29,7 @@ STEP 3: Competencies breakdown, explanations and exercises
 
 1. document.addEventListener('DOMContentLoaded', function () { /* Entire code here */ }
 	>> Already provided, tells the browser to only execute the code after the entire document has been completely loaded.
+	
 	>> Ref: https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 	
 2. TODO: Get the element `<ul id="activities">` and store it in the `activities` property
