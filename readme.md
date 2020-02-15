@@ -35,6 +35,7 @@ STEP 3: Competencies breakdown, explanations and exercises
 2. TODO: Get the element `<ul id="activities">` and store it in the `activities` property
 	>> "elements" is an objects with 2 properties: boredButton and activities.
 	>> boredButton corresponds to the HTML element with id #suggest-activity-button, while activities must correspond to the element with id #activities.
+	
 	>> Ref: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
 	
 3. 
@@ -45,6 +46,7 @@ STEP 3: Competencies breakdown, explanations and exercises
 		this.price = null;
 		this.element = document.createElement('li');
 	>> A class called ExcitingActivity is being created. A new object will be created through this classe later (see 4.a)
+	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp
 	
 	TODO: Add DOM class `activity` to `this.element`
@@ -69,14 +71,15 @@ STEP 3: Competencies breakdown, explanations and exercises
 			return data;
 			});
 	}
+	
 	>> Ref: https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 	
 	c.
 	addToList() {
-      let descriptionElement = document.createElement('p');
-      descriptionElement.classList.add('activity-description');
-      descriptionElement.textContent = this.description;
-      this.element.appendChild(descriptionElement);
+      		let descriptionElement = document.createElement('p');
+      		descriptionElement.classList.add('activity-description');
+      		descriptionElement.textContent = this.description;
+      		this.element.appendChild(descriptionElement);
 	>> This block creates a new paragraph (into the variable descriptionElement), assigns the DOM class .activity-description to it, then inserts in it the text coming from the this.description property of the activity object and finally appends the new paragraph to this.element as a child.
 	
 	TODO: Creates a `span` element and stores it in a variable named `priceElement`
@@ -88,7 +91,9 @@ STEP 3: Competencies breakdown, explanations and exercises
 	TODO: Assign `this.price` prepended by a `$` character to `priceElement.textContent`
 	>> Same as descriptionElement.textContent = this.description;
 	>> Remember to use template literals and escape the $ character in order for it to appear on the screen
+	
 	>> Ref: https://devdocs.io/javascript/template_literals
+	
 	>> Ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 	
 	TODO: Append `priceElement` to `this.element` after `descriptionElement` is appended to it
@@ -104,6 +109,7 @@ STEP 3: Competencies breakdown, explanations and exercises
 	a.
 	let activity;
 	>> We defined a class in 3.a, now we need to create an object from that and assign it to the variable called activity.
+	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp
 	>> Note the difference in the constructor() statement between our ExcitingActivity and the Car in the example. It will reflect on the way we create the new element.
 	
@@ -116,6 +122,7 @@ STEP 3: Competencies breakdown, explanations and exercises
      *   1. Call `fetchContents` function off of the new instance of `ExcitingActivity` which should return a promise
      *   2. After the promise returned by `fetchContents` is resolved, call the `addToList` function
 	>> Remember that the two functions we need to call are methods of the activity objects defined above.
+	
 	>> Ref: https://www.w3schools.com/js/js_classes.asp (methods section)
 	
 	>> The example found here https://javascript.info/promise-basics#then explains the use of .then() with the following example:
