@@ -50,14 +50,16 @@ build an app that displays a new activity in a list, every time a button is pres
 [How to make HTTP requests using Fetch API and Promises](https://medium.com/@armando_amador/how-to-make-http-requests-using-fetch-api-and-promises-b0ca7370a444): another example of fetch usage.
 
 ### classList
+... coming soon ...
 
 ### Classes
+... coming soon ...
 
 ### Extra
 This section is not necessary to complete the code construct.
 #### Promises (async/await), fetch
 [Introduction to the Fetch API](https://www.sitepoint.com/introduction-to-the-fetch-api/): how to replace .then with async/await while using fetch.
-### Promises (async/await), fetch, modules
+#### Promises (async/await), fetch, modules
 [Create an awesome JS API interface using Fetch (in less than 50 lines)](https://dev.to/eddieaich/create-an-awesome-js-api-interface-using-fetch-in-less-than-50-lines-3d65): abstract the use of fetch, by bringing in async/await and modules.
 
 ```
