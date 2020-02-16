@@ -1,4 +1,4 @@
-York University FS1010 - UI Concepts and Frameworks: Code Construct 1
+# York University FS1010 - UI Concepts and Frameworks: Code Construct 1
 
 Walkthrough for an exercise of a course at York University (only accessible to students [here](https://gitlab.com/york-u-fs1010-fall-2019/code-construct-one))
 
@@ -8,11 +8,12 @@ Feedback and comments are appreciated: [Mauro Meden](mailto:mauro.meden@gmail.co
 
 ---
 
-OBJECTIVE: build an app that displays a new activity in a list, every time a button is pressed. The activities will come from an API ('https://www.boredapi.com/api/activity) and will be displayed on an HTML page.
+## OBJECTIVE:
+build an app that displays a new activity in a list, every time a button is pressed. The activities will come from an API ('https://www.boredapi.com/api/activity) and will be displayed on an HTML page.
 
 ---
 
-STEP 1: Identify what the app will do
+## STEP 1: Identify what the app will do
 
 1. Create an eventListener to check that the document has been loaded. Include everything else in a function triggered by this eventListener.
 2. Get elements from DOM: button and ul.
@@ -27,17 +28,49 @@ STEP 1: Identify what the app will do
 
 ---
 
-STEP 2: Verify necessary competencies
+## STEP 2: Verify necessary competencies
 
 1. DOM
 2. DOM
-3. Classes (initialization), DOM; classList, fetch, promises (.then)
+3. Classes (initialization), DOM; classList, fetch, consuming APIs, promises (.then), JSON
 4. Classes (create object), promises (.then)
 5. DOM
 
 ---
 
-STEP 3: Competencies breakdown, explanations and exercises (exercises to be added soon)
+## STEP 3: preparatory exercises and learning resources
+
+### DOM, consuming APIs
+[How to Connect to an API with JavaScript](https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/) : this tutorial uses the outdated method XMLHttpRequest method to connect to an API, which has been replaced by fetch. It's still a good exercise for practicing DOM manipulation.
+
+### Fetch, .then, JSON
+[How to Use the JavaScript Fetch API to Get JSON Data](https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/): a short article to explain how to use fetch (which can now be integrated in the previous app, removing XMLHttpRequest).
+[How to Use JSON Data with PHP or JavaScript](https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/): we will use JSON to process the data coming from the API, so make sure you understand it before starting (skip the part on PHP).
+[Using fetch to get data from an API](https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data): a more thorough explanation of how fetch and JSON work together.
+[How to make HTTP requests using Fetch API and Promises](https://medium.com/@armando_amador/how-to-make-http-requests-using-fetch-api-and-promises-b0ca7370a444): another example of fetch usage.
+
+### classList
+
+### Classes
+
+### Extra
+This section is not necessary to complete the code construct.
+#### Promises (async/await), fetch
+[Introduction to the Fetch API](https://www.sitepoint.com/introduction-to-the-fetch-api/): how to replace .then with async/await while using fetch.
+### Promises (async/await), fetch, modules
+[Create an awesome JS API interface using Fetch (in less than 50 lines)](https://dev.to/eddieaich/create-an-awesome-js-api-interface-using-fetch-in-less-than-50-lines-3d65): abstract the use of fetch, by bringing in async/await and modules.
+
+```
+All exercises and turorials are from:
+https://www.taniarascia.com/
+https://scotch.io/
+https://dev.to/
+https://medium.com/@armando_amador/
+```
+
+---
+
+## STEP 4: Competencies breakdown and explanations
 
 1. 	```javascript
 	document.addEventListener('DOMContentLoaded', function () { /* Entire code here */ }
